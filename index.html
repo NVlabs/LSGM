@@ -1,0 +1,367 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+body {
+    font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 980px;
+}
+h1 {
+    font-weight:300;
+    line-height: 1.15em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+a:link,a:visited {
+    color: #B6486F;
+    text-decoration: none;
+}
+a:hover {
+    color: #208799;
+}
+h1, h2, h3 {
+    text-align: center;
+}
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+}
+h2 {
+    font-weight: 400;
+    margin: 16px 0px 4px 0px;
+}
+.paper-title {
+    padding: 16px 0px 16px 0px;
+}
+section {
+    margin: 32px 0px 32px 0px;
+    text-align: justify;
+    clear: both;
+}
+.col-5 {
+     width: 20%;
+     float: left;
+}
+.col-4 {
+     width: 25%;
+     float: left;
+}
+.col-3 {
+     width: 33%;
+     float: left;
+}
+.col-2 {
+     width: 50%;
+     float: left;
+}
+.row, .author-row, .affil-row {
+     overflow: auto;
+}
+.author-row, .affil-row {
+    font-size: 26px;
+}
+.row {
+    margin: 16px 0px 16px 0px;
+}
+.authors {
+    font-size: 18px;
+}
+.affil-row {
+    margin-top: 16px;
+}
+.teaser {
+    max-width: 100%;
+}
+.text-center {
+    text-align: center;  
+}
+.screenshot {
+    width: 256px;
+    border: 1px solid #ddd;
+}
+.screenshot-el {
+    margin-bottom: 16px;
+}
+hr {
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid #ddd;
+    margin: 0;
+}
+.material-icons {
+    vertical-align: -6px;
+}
+p {
+    line-height: 1.25em;
+}
+.caption {
+    font-size: 16px;
+    /*font-style: italic;*/
+    color: #666;
+    text-align: center;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+video {
+    display: block;
+    margin: auto;
+}
+figure {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#bibtex pre {
+    font-size: 14px;
+    background-color: #eee;
+    padding: 16px;
+}
+.blue {
+    color: #2c82c9;
+    font-weight: bold;
+}
+.orange {
+    color: #d35400;
+    font-weight: bold;
+}
+.flex-row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.paper-btn {
+  position: relative;
+  text-align: center;
+
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 8px;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  
+  background-color: #B6486F;
+  color: white !important;
+  font-size: 20px;
+  width: 100px;
+  font-weight: 600;
+}
+.paper-btn-parent {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0px;
+}
+.paper-btn:hover {
+    opacity: 0.85;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.venue {
+    /*color: #B6486F;*/
+    font-size: 30px;
+
+}
+
+</style>
+
+<!-- End : Google Analytics Code -->
+<script type="text/javascript" src="../js/hidebib.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
+    <head>
+        <title>Score-based Generative Modeling in Latent Space</title>
+        <meta property="og:description" content="Score-based Generative Modeling in Latent Space"/>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:creator" content="@ArashVahdat">
+        <meta name="twitter:title" content="Score-based Generative Modeling in Latent Space">
+        <meta name="twitter:description" content="Score-based generative models (SGMs), also known as denoising diffusion models, have recently demonstrated impressive results in terms of both sample quality and distribution coverage. However, they are usually applied directly in data space and often require thousands of network evaluations for sampling. We propose the Latent Score-based Generative Model (LSGM), a novel approach that trains SGMs in a latent space, relying on the variational autoencoder framework. Moving from data to latent space allows us to train more expressive generative models, apply SGMs to non-continuous data, and learn smoother SGMs in a smaller space, resulting in fewer network evaluations and faster sampling.">
+        <meta name="twitter:image" content="https://nvlabs.github.io/LSGM/assets/pipelinefig.png">
+    </head>
+
+ <body>
+<div class="container">
+    <div class="paper-title">
+      <h1>Score-based Generative Modeling in Latent Space</h1>
+    </div>
+
+    <div id="authors">
+    	<center>
+        <div class="author-row">
+            <div class="col-3 text-center"><a href="http://latentspace.cc/">Arash Vahdat</a> *</div>
+            <div class="col-3 text-center"><a href="https://nv-tlabs.github.io/author/karsten-kreis/">Karsten Kreis</a> *</div>
+            <div class="col-3 text-center"><a href="https://jankautz.com/">Jan Kautz</a></div>
+        </div>
+        <p style="margin-top: 0.1cm;"><i>* equal contribution</i></p>
+        </center>
+        <center><img width="20%" src="./assets/nvidialogo.png" style="margin-top: 10px; margin-bottom: 3px;"></center>
+<!--         <div class="affil-row">
+            <div class="col-1 text-center">NVIDIA</div>
+        </div> -->
+        <div class="affil-row">
+            <div class="venue text-center"><b>NeurIPS 2021</b></div>
+        </div>
+
+        <div style="clear: both">
+            <div class="paper-btn-parent">
+            <a class="paper-btn" href="https://arxiv.org/pdf/2106.05931.pdf">
+                <span class="material-icons"> description </span> 
+                 Paper
+            </a>
+            <a class="paper-btn" href="https://github.com/NVlabs/LSGM">
+                <span class="material-icons"> code </span> 
+                 Code
+            </a>
+        </div></div>
+    </div>
+
+    <section id="teaser-image">
+            </p><figure style="margin-top: 20px; margin-bottom: 20px;">
+                <img width="100%" src="./assets/pipelinefig.png" style="margin-bottom: 20px;">
+                <p class="caption">
+                    In our latent score-based generative model (LSGM), data is mapped to latent space via an encoder q(z<sub>0</sub>|x) and a diffusion process is applied in the latent space (z<sub>0</sub> &rarr; z<sub>1</sub>). Synthesis starts from the base distribution p(z<sub>1</sub>) and generates samples in latent space via denoising (z<sub>0</sub> &larr; z<sub>1</sub>). Then, the samples are mapped from latent to data space using a decoder p(x|z<sub>0</sub>). The model is trained end-to-end.
+                </p><p class="caption">
+            </p>
+    </section>
+
+    <section id="news">
+        <h2>News</h2>
+        <hr>
+        <div class="row">
+            <!-- <div><span class="material-icons"> event </span> [Dec 2021] Paper presented at NeurIPS 2021.</div> -->
+            <div><span class="material-icons"> event </span> [Dec 2021] Our <a href="https://github.com/NVlabs/LSGM">code</a> has been released.</div>
+            <div><span class="material-icons"> event </span> [Sep 2021] Our paper is accepted to NeurIPS 2021!</div>
+            <div><span class="material-icons"> event </span> [Jun 2021] <a href="https://twitter.com/ArashVahdat/status/1403362799481364485">Twitter thread</a> explaining the work in detail.</div>
+            <div><span class="material-icons"> event </span> [Jun 2021] Draft released on <a href="https://arxiv.org/abs/2106.05931">arXiv</a>.</div>
+        </div>
+    </section>
+
+    <section id="abstract"/>
+        <h2>Abstract</h2>
+        <hr>
+        <div class="flex-row">
+            <p>
+                Score-based generative models (SGMs), also known as denoising diffusion models, have recently demonstrated impressive results in terms of both sample quality and distribution coverage. However, they are usually applied directly in data space and often require thousands of network evaluations for sampling. Here, we propose <i>the Latent Score-based Generative Model (LSGM)</i>, a novel approach that trains SGMs in a latent space, relying on the variational autoencoder framework. Moving from data to latent space allows us to train more expressive generative models, apply SGMs to non-continuous data, and learn smoother SGMs in a smaller space, resulting in fewer network evaluations and faster sampling. To enable training LSGMs end-to-end in a scalable and stable manner, we (i) introduce a new score-matching objective suitable to the LSGM setting, (ii) propose a novel parameterization of the score function that allows SGM to focus on the mismatch of the target distribution with respect to a simple Normal one, and (iii) analytically derive multiple techniques for variance reduction of the training objective. LSGM obtains a state-of-the-art FID score of 2.10 on CIFAR-10, outperforming all existing generative results on this dataset. On CelebA-HQ-256, LSGM is on a par with previous SGMs in sample quality while outperforming them in sampling time by two orders of magnitude. In modeling binary images, LSGM achieves state-of-the-art likelihood on the binarized OMNIGLOT dataset.
+            </p>
+        </div>
+    </section>
+
+
+    <section id="intro"/>
+        <h2>Score-based Generative Modeling in Latent Space</h2>
+        <hr>
+        <div class="flex-row">
+            <p> Recently, score-based generative models (SGMs) demonstrated astonishing results in terms of both high sample quality and mode coverage. These models define a forward diffusion process that maps data to noise by gradually perturbing the input data. Generation corresponds to a reverse process that synthesizes novel data via iterative denoising, starting from random noise. The training problem then reduces to learning <i>the score function</i>--the gradient of the log-density--of the perturbed data.
+            </p>
+            <p> Albeit high quality, sampling from SGMs is computationally expensive. This is because generation amounts to solving a complex SDE, or equivalently ordinary differential equation (ODE), that maps a simple base distribution to the complex data distribution. The resulting differential equations are typically complex and solving them accurately requires numerical integration with very small step sizes, which results in thousands of neural network evaluations. Furthermore, generation complexity is uniquely defined by the underlying data distribution and the forward SDE for data perturbation, implying that synthesis speed cannot be increased easily without sacrifices. Moreover, SDE-based generative models are currently defined for continuous data and cannot be applied effortlessly to binary, categorical, or graph-structured data.
+            </p>
+            <p> In this paper, we propose the <i>Latent Score-based Generative Model (LSGM)</i>, a new approach for learning SGMs in latent space, leveraging a variational autoencoder (VAE) framework. We map the input data to latent space and apply the score-based generative model there. The score-based model is then tasked with modeling the distribution over the latent embeddings of the data set. Novel data synthesis is achieved by first generating embeddings via drawing from a simple base distribution followed by iterative denoising, and then transforming this embedding via a decoder to data space. We can consider this model a VAE with an SGM prior. See our figure above for additional details.
+            </p>
+        </div>
+    </section>
+
+
+    <section id="advantages"/>
+        <h2>Advantages of Latent Score-based Generative Models</h2>
+        <hr>
+        <div class="flex-row">
+              <p><b>Synthesis Speed:</b> By pretraining the VAE with a Normal prior first, we can bring the marginal distribution over encodings (the <i>aggregate posterior</i>) close to the Normal prior, which is also the SGM's base distribution. Consequently, the SGM only needs to model the remaining mismatch, resulting in a less complex model from which sampling becomes easier. Furthermore, we can tailor the latent space according to our needs. For example, we can use hierarchical latent variables and apply the diffusion model only over a subset of them or at a small resolution, further improving synthesis speed.</p>
+              <p><b>Expressivity:</b> Training a regular SGM can be considered as training a neural ODE directly on the data. However, previous works found that augmenting neural ODEs and more generally generative models with latent variables improves their expressivity. Consequently, we expect similar expressivity improvements from combining SGMs with a latent variable framework.</p> 
+              <p><b>Tailored Encoders and Decoders:</b> Since we use the SGM in latent space, we can utilize carefully designed encoders and decoders mapping between latent and data space, further improving expressivity. Additionally, the LSGM method can therefore be naturally applied to non-continuous data.</p>
+        </div>
+    </section>
+
+    <section id="novelties"/>
+        <h2>Technical Contributions</h2>
+        <hr>
+        <div class="flex-row">
+            <p>LSGMs can be trained end-to-end by maximizing the variational lower bound on the data likelihood. Compared to regular score matching, our approach comes with additional challenges, since both the score-based denoising model and its target distribution, formed by the latent space encodings, are learnt simultaneously. To this end, we make the following technical contributions: <b>(i)</b> We derive a new denoising score matching objective that allows us to efficiently learn the VAE model and the latent SGM prior at the same time. <b>(ii)</b> We introduce a new parameterization of the latent space score function, which mixes a Normal distribution with a learnable SGM, allowing the SGM to model only the mismatch between the distribution of latent variables and the Normal prior. <b>(iii)</b> We propose techniques for variance reduction of the training objective by designing a new SDE and by analytically deriving importance sampling schemes, allowing us to stably train deep LSGMs.
+            </p>
+        </div>
+    </section>
+
+
+    <section id="results">
+        <h2>Results</h2>
+        <hr>
+        <p>Experimentally, we achieve state-of-the-art 2.10 FID on CIFAR-10 and 7.22 FID on CelebA-HQ-256, and significantly improve upon likelihoods of previous SGMs. On CelebA-HQ-256, we outperform previous SGMs in synthesis speed by two orders of magnitude. LSGM requires 23 and 138 function evaluations on the CelebA-HQ-256 and CIFAR-10 datasets, respectively. We also model binarized images, MNIST and OMNIGLOT, achieving state-of-the-art likelihood on the latter.</p>
+        <figure style="width: 100%;">
+            <a href="assets/results.png">
+                <img width="100%" src="assets/results.png">
+            </a>
+            <p class="caption" style="margin-bottom: 24px;">
+                 Generated samples for different datasets. LSGM successfully generates sharp, high-quality, and diverse samples.
+            </p>
+        </figure>
+        <br> 
+        <figure>
+            <video class="centered" width="100%" autoplay muted loop>
+                <source src="assets/latent_traversal.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p class="caption">
+                The sequence above is generated by randomly traversing in the latent space of LSGM.
+            </p>
+        </figure>
+        <br> <br>
+        <figure style="width: 100%;">
+            <a href="assets/sde_evolution.png">
+                <img width="100%" src="assets/sde_evolution.png">
+            </a>
+            <p class="caption" style="margin-bottom: 24px;">
+                 We visualize the evolution of the latent variables under the reverse-time generative process by feeding latent variables from different stages along the process to the decoder to map them back to image space.
+            </p>
+        </figure>
+
+    </section>
+    
+    <section id="paper">
+        <h2>Paper</h2>
+        <hr>
+        <div class="flex-row">
+            <div style="box-sizing: border-box; padding: 16px; margin: auto;">
+                <a href="https://arxiv.org/abs/2106.05931"><img class="screenshot" src="assets/paper_preview.png"></a>
+            </div>
+            <div style="width: 50%; font-size: 20px;">
+                <p><b>Score-based Generative Modeling in Latent Space</b></p>
+                <p>Arash Vahdat*, Karsten Kreis*, Jan Kautz</p>
+                <p><i>* Authors contributed equally.</i></p>
+                <div><span class="material-icons"> description </span><a href="https://arxiv.org/abs/2106.05931"> arXiv version</a></div>
+                <div><span class="material-icons"> insert_comment </span><a href="assets/vahdat2021LSGM.bib"> BibTeX</a></div>
+                <div><span class="material-icons"> integration_instructions </span><a href="https://github.com/NVlabs/LSGM"> Code</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bibtex">
+        <h2>Citation</h2>
+        <hr>
+        <pre><code>@inproceedings{vahdat2021score,
+    title={Score-based Generative Modeling in Latent Space},
+    author={Vahdat, Arash and Kreis, Karsten and Kautz, Jan},
+    booktitle={Neural Information Processing Systems (NeurIPS)},
+    year={2021}
+}</code></pre>
+    </section>
+</div>
+</body>
+</html>
+
