@@ -1,3 +1,4 @@
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/score-based-generative-modeling-in-latent/image-generation-on-cifar-10)](https://paperswithcode.com/sota/image-generation-on-cifar-10?p=score-based-generative-modeling-in-latent) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/score-based-generative-modeling-in-latent/image-generation-on-celeba-hq-256x256)](https://paperswithcode.com/sota/image-generation-on-celeba-hq-256x256?p=score-based-generative-modeling-in-latent)
 # The Official PyTorch Implementation of "LSGM: Score-based Generative Modeling in Latent Space" [(NeurIPS 2021)](https://arxiv.org/abs/2106.05931)
 
 <div align="center">
