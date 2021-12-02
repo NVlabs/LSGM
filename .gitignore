@@ -1,0 +1,8 @@
+ngc_scripts/
+paper_scripts/
+unused/
+visualizations/
+.idea/
+.run/
+*.pyc
+*.pdf
