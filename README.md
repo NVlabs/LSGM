@@ -147,7 +147,7 @@ any of the LSGMs trained on CIFAR-10 (on 2 nodes with 8 32GB V100 GPUs each):
 ```shell script
 mpirun --allow-run-as-root -np 2 -npernode 1 bash -c 
     'python evaluate_vada.py --data $DATA_DIR/cifar10 --root $CHECKPOINT_DIR --save $EXPR_ID/eval --eval_mode evaluate \
-    --checkpoint $CHECKPOINT_DIR/EXPR_ID/lsgm/checkpoint.pt --fid_dir $FID_STATS_DIR --num_process_per_node 8 \
+    --checkpoint $CHECKPOINT_DIR/$EXPR_ID/lsgm/checkpoint.pt --fid_dir $FID_STATS_DIR --num_process_per_node 8 \
     --nll_ode_eval --fid_ode_eval --ode_eps 1e-6 --ode_solver_tol 1e-5 --batch_size 32 --node_rank $NODE_RANK \
     --num_proc_node 2 --master_address \${NGC_MASTER_ADDR} '
 ```
