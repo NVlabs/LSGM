@@ -139,7 +139,7 @@ mpirun --allow-run-as-root -np 2 -npernode 1 bash -c
     --weight_decay_norm_dae 1e-2 --weight_decay_norm_vae 1e-2 --time_eps 0.0 --train_ode_eps 1e-6 --eval_ode_eps 1e-6 \
     --train_ode_solver_tol 1e-5 --eval_ode_solver_tol 1e-5 --iw_sample_p ll_uniform --iw_sample_q reweight_p_samples \
     --arch_instance_dae res_ho_attn --num_process_per_node 8 --use_se --node_rank $NODE_RANK --num_proc_node 2 \
-    --master_address \${NGC_MASTER_ADDR} '
+    --master_address ${NGC_MASTER_ADDR} '
 ```
 
 The following command can be used to evaluate the negative variational bound on the data log-likelihood as well as the FID score for 
